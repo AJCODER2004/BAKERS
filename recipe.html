@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes - Bakers Heaven</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fff5f8;
+        }
+
+        .navbar {
+            background-color: #f8c8dc;
+            border-bottom: 3px solid #ff4d6b;
+        }
+
+        .navbar-brand .logo {
+            max-height: 50px;
+            margin-right: 10px;
+        }
+
+        .brand-name {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+        }
+
+        .navbar-nav .nav-link {
+            color: #333;
+            padding: 5px 10px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ff4d6b;
+            border-bottom: 2px solid #ff4d6b;
+        }
+
+        .navbar-nav .nav-link.active {
+            color: #ff4d6b;
+            border-bottom: 2px solid #ff4d6b;
+        }
+
+        .recipe-card {
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .recipe-card img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .recipe-card h5 {
+            margin-top: 15px;
+            color: #ff4081;
+        }
+
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+
+        .btn-pink {
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-pink:hover {
+            background-color: #e7336f;
+        }
+
+        .modal-header {
+            background-color: #ff4081;
+            color: white;
+        }
+
+        .modal-footer .btn-pink {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="Images/Logo.png" alt="Bakers Heaven Logo" class="logo">
+                <span class="brand-name">Bakers Heaven</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about us.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recipe.html">Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact us.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Recipes Section -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Our Recipes</h2>
+        <div class="row">
+            <!-- Recipe 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="recipe-card">
+                    <img src="Images/recipe1.jpg" alt="Chocolate Cake" class="img-fluid">
+                    <div class="p-3">
+                        <h5>Chocolate Cake</h5>
+                        <p>A rich and moist chocolate cake that's perfect for any occasion. It's easy to make and loved
+                            by everyone.</p>
+                        <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                            data-bs-target="#orderModal">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="recipe-card">
+                    <img src="Images/recipe2.jpg" alt="Vanilla Cupcakes" class="img-fluid">
+                    <div class="p-3">
+                        <h5>Vanilla Cupcakes</h5>
+                        <p>Fluffy vanilla cupcakes that are light, sweet, and full of flavor. A classic treat everyone
+                            enjoys!</p>
+                        <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                            data-bs-target="#orderModal">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="recipe-card">
+                    <img src="Images/recipe3.jpg" alt="Blueberry Muffins" class="img-fluid">
+                    <div class="p-3">
+                        <h5>Blueberry Muffins</h5>
+                        <p>These soft muffins are packed with fresh blueberries and have a delicious sweet crumb
+                            topping.</p>
+                        <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                            data-bs-target="#orderModal">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 4 -->
+            <div class="col-md-4 mb-4">
+                <div class="recipe-card">
+                    <img src="Images/recipe4.jpg" alt="Raspberry Tart" class="img-fluid">
+                    <div class="p-3">
+                        <h5>Raspberry Tart</h5>
+                        <p>A delightful tart with a buttery crust, and a touch of sweetness that melts in your mouth.
+                        </p>
+                        <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                            data-bs-target="#orderModal">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 5 -->
+            <div class="col-md-4 mb-4">
+                <div class="recipe-card">
+                    <img src="Images/recipe5.jpg" alt="Apple Pie" class="img-fluid">
+                    <div class="p-3">
+                        <h5>Apple Pie</h5>
+                        <p>Warm, cinnamon-spiced apple pie with a flaky crust. Perfect for fall gatherings or any time
+                            of the year.</p>
+                        <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                            data-bs-target="#orderModal">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 6 -->
+            <div class="col-md-4 mb-4">
+                <div class="recipe-card">
+                    <img src="Images/recipe6.jpg" alt="Carrot Cake" class="img-fluid">
+                    <div class="p-3">
+                        <h5>Carrot Cake</h5>
+                        <p>A spiced cake full of fresh carrots and a creamy frosting that makes every bite a heavenly
+                            experience.</p>
+                        <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                            data-bs-target="#orderModal">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 7 -->
+            <div class="col-md-4 mb-4">
+                <div class="recipe-card">
+                    <img src="Images/recipe7.jpg" alt="Chocolate Chip Cookies" class="img-fluid">
+                    <div class="p-3">
+                        <h5>Chocolate Chip Cookies</h5>
+                        <p>Golden, chewy cookies filled with gooey chocolate chips—an all-time favorite treat!</p>
+                        <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                            data-bs-target="#orderModal">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 8 -->
+            <div class="col-md-4 mb-4">
+                <div class="recipe-card">
+                    <img src="Images/recipe8.jpg" alt="Banana Bread" class="img-fluid">
+                    <div class="p-3">
+                        <h5>Banana Bread</h5>
+                        <p>Soft banana bread made with overripe bananas and a touch of cinnamon, perfect for breakfast.
+                        </p>
+                        <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                            data-bs-target="#orderModal">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 9 -->
+            <div class="col-md-4 mb-4">
+                <div class="recipe-card">
+                    <img src="Images/recipe9.jpg" alt="Lemon Drizzle Cake">
+                    <div class="p-3">
+                        <h5>Lemon Drizzle Cake</h5>
+                        <p>A light, zesty cake with a tangy lemon drizzle that makes it the perfect refreshing dessert.
+                        </p>
+                        <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                            data-bs-target="#orderModal">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+
+                        <!-- Recipe 1 -->
+                        <div class="col-md-4 mb-4">
+                        <div class="recipe-card">
+                            <img src="Images/recipe1.jpg" alt="Chocolate Cake" class="img-fluid">
+                            <div class="p-3">
+                                <h5>Chocolate Cake</h5>
+                                <p>A rich and moist chocolate cake that's perfect for any occasion. It's easy to make and loved
+                                    by everyone.</p>
+                                <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                                    data-bs-target="#orderModal">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Recipe 2 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="recipe-card">
+                            <img src="Images/recipe2.jpg" alt="Vanilla Cupcakes" class="img-fluid">
+                            <div class="p-3">
+                                <h5>Vanilla Cupcakes</h5>
+                                <p>Fluffy vanilla cupcakes that are light, sweet, and full of flavor. A classic treat everyone
+                                    enjoys!</p>
+                                <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                                    data-bs-target="#orderModal">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Recipe 3 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="recipe-card">
+                            <img src="Images/recipe3.jpg" alt="Blueberry Muffins" class="img-fluid">
+                            <div class="p-3">
+                                <h5>Blueberry Muffins</h5>
+                                <p>These soft muffins are packed with fresh blueberries and have a delicious sweet crumb
+                                    topping.</p>
+                                <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                                    data-bs-target="#orderModal">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                                <!-- Recipe 4 -->
+            <div class="col-md-4 mb-4">
+                <div class="recipe-card">
+                    <img src="Images/recipe4.jpg" alt="Raspberry Tart" class="img-fluid">
+                    <div class="p-3">
+                        <h5>Raspberry Tart</h5>
+                        <p>A delightful tart with a buttery crust, and a touch of sweetness that melts in your mouth.
+                        </p>
+                        <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                            data-bs-target="#orderModal">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 5 -->
+            <div class="col-md-4 mb-4">
+                <div class="recipe-card">
+                    <img src="Images/recipe5.jpg" alt="Apple Pie" class="img-fluid">
+                    <div class="p-3">
+                        <h5>Apple Pie</h5>
+                        <p>Warm, cinnamon-spiced apple pie with a flaky crust. Perfect for fall gatherings or any time
+                            of the year.</p>
+                        <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                            data-bs-target="#orderModal">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 6 -->
+            <div class="col-md-4 mb-4">
+                <div class="recipe-card">
+                    <img src="Images/recipe6.jpg" alt="Carrot Cake" class="img-fluid">
+                    <div class="p-3">
+                        <h5>Carrot Cake</h5>
+                        <p>A spiced cake full of fresh carrots and a creamy frosting that makes every bite a heavenly
+                            experience.</p>
+                        <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                            data-bs-target="#orderModal">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 7 -->
+            <div class="col-md-4 mb-4">
+                <div class="recipe-card">
+                    <img src="Images/recipe7.jpg" alt="Chocolate Chip Cookies" class="img-fluid">
+                    <div class="p-3">
+                        <h5>Chocolate Chip Cookies</h5>
+                        <p>Golden, chewy cookies filled with gooey chocolate chips—an all-time favorite treat!</p>
+                        <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                            data-bs-target="#orderModal">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 8 -->
+            <div class="col-md-4 mb-4">
+                <div class="recipe-card">
+                    <img src="Images/recipe8.jpg" alt="Banana Bread" class="img-fluid">
+                    <div class="p-3">
+                        <h5>Banana Bread</h5>
+                        <p>Soft banana bread made with overripe bananas and a touch of cinnamon, perfect for breakfast.
+                        </p>
+                        <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                            data-bs-target="#orderModal">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 9 -->
+            <div class="col-md-4 mb-4">
+                <div class="recipe-card">
+                    <img src="Images/recipe9.jpg" alt="Lemon Drizzle Cake">
+                    <div class="p-3">
+                        <h5>Lemon Drizzle Cake</h5>
+                        <p>A light, zesty cake with a tangy lemon drizzle that makes it the perfect refreshing dessert.
+                        </p>
+                        <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                            data-bs-target="#orderModal">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+                        <!-- Recipe 1 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="recipe-card">
+                                <img src="Images/recipe1.jpg" alt="Chocolate Cake" class="img-fluid">
+                                <div class="p-3">
+                                    <h5>Chocolate Cake</h5>
+                                    <p>A rich and moist chocolate cake that's perfect for any occasion. It's easy to make and loved
+                                        by everyone.</p>
+                                    <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                                        data-bs-target="#orderModal">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Recipe 2 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="recipe-card">
+                                <img src="Images/recipe2.jpg" alt="Vanilla Cupcakes" class="img-fluid">
+                                <div class="p-3">
+                                    <h5>Vanilla Cupcakes</h5>
+                                    <p>Fluffy vanilla cupcakes that are light, sweet, and full of flavor. A classic treat everyone
+                                        enjoys!</p>
+                                    <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                                        data-bs-target="#orderModal">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Recipe 3 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="recipe-card">
+                                <img src="Images/recipe3.jpg" alt="Blueberry Muffins" class="img-fluid">
+                                <div class="p-3">
+                                    <h5>Blueberry Muffins</h5>
+                                    <p>These soft muffins are packed with fresh blueberries and have a delicious sweet crumb
+                                        topping.</p>
+                                    <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                                        data-bs-target="#orderModal">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Recipe 4 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="recipe-card">
+                                <img src="Images/recipe4.jpg" alt="Raspberry Tart" class="img-fluid">
+                                <div class="p-3">
+                                    <h5>Raspberry Tart</h5>
+                                    <p>A delightful tart with a buttery crust, and a touch of sweetness that melts in your mouth.
+                                    </p>
+                                    <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                                        data-bs-target="#orderModal">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Recipe 5 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="recipe-card">
+                                <img src="Images/recipe5.jpg" alt="Apple Pie" class="img-fluid">
+                                <div class="p-3">
+                                    <h5>Apple Pie</h5>
+                                    <p>Warm, cinnamon-spiced apple pie with a flaky crust. Perfect for fall gatherings or any time
+                                        of the year.</p>
+                                    <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                                        data-bs-target="#orderModal">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Recipe 6 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="recipe-card">
+                                <img src="Images/recipe6.jpg" alt="Carrot Cake" class="img-fluid">
+                                <div class="p-3">
+                                    <h5>Carrot Cake</h5>
+                                    <p>A spiced cake full of fresh carrots and a creamy frosting that makes every bite a heavenly
+                                        experience.</p>
+                                    <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                                        data-bs-target="#orderModal">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Recipe 7 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="recipe-card">
+                                <img src="Images/recipe7.jpg" alt="Chocolate Chip Cookies" class="img-fluid">
+                                <div class="p-3">
+                                    <h5>Chocolate Chip Cookies</h5>
+                                    <p>Golden, chewy cookies filled with gooey chocolate chips—an all-time favorite treat!</p>
+                                    <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                                        data-bs-target="#orderModal">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Recipe 8 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="recipe-card">
+                                <img src="Images/recipe8.jpg" alt="Banana Bread" class="img-fluid">
+                                <div class="p-3">
+                                    <h5>Banana Bread</h5>
+                                    <p>Soft banana bread made with overripe bananas and a touch of cinnamon, perfect for breakfast.
+                                    </p>
+                                    <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                                        data-bs-target="#orderModal">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Recipe 9 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="recipe-card">
+                                <img src="Images/recipe9.jpg" alt="Lemon Drizzle Cake">
+                                <div class="p-3">
+                                    <h5>Lemon Drizzle Cake</h5>
+                                    <p>A light, zesty cake with a tangy lemon drizzle that makes it the perfect refreshing dessert.
+                                    </p>
+                                    <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                                        data-bs-target="#orderModal">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+            
+            
+                                    <!-- Recipe 1 -->
+                                    <div class="col-md-4 mb-4">
+                                    <div class="recipe-card">
+                                        <img src="Images/recipe1.jpg" alt="Chocolate Cake" class="img-fluid">
+                                        <div class="p-3">
+                                            <h5>Chocolate Cake</h5>
+                                            <p>A rich and moist chocolate cake that's perfect for any occasion. It's easy to make and loved
+                                                by everyone.</p>
+                                            <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                                                data-bs-target="#orderModal">Order Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <!-- Recipe 2 -->
+                                <div class="col-md-4 mb-4">
+                                    <div class="recipe-card">
+                                        <img src="Images/recipe2.jpg" alt="Vanilla Cupcakes" class="img-fluid">
+                                        <div class="p-3">
+                                            <h5>Vanilla Cupcakes</h5>
+                                            <p>Fluffy vanilla cupcakes that are light, sweet, and full of flavor. A classic treat everyone
+                                                enjoys!</p>
+                                            <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                                                data-bs-target="#orderModal">Order Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <!-- Recipe 3 -->
+                                <div class="col-md-4 mb-4">
+                                    <div class="recipe-card">
+                                        <img src="Images/recipe3.jpg" alt="Blueberry Muffins" class="img-fluid">
+                                        <div class="p-3">
+                                            <h5>Blueberry Muffins</h5>
+                                            <p>These soft muffins are packed with fresh blueberries and have a delicious sweet crumb
+                                                topping.</p>
+                                            <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                                                data-bs-target="#orderModal">Order Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+            
+            
+                                            <!-- Recipe 4 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="recipe-card">
+                                <img src="Images/recipe4.jpg" alt="Raspberry Tart" class="img-fluid">
+                                <div class="p-3">
+                                    <h5>Raspberry Tart</h5>
+                                    <p>A delightful tart with a buttery crust, and a touch of sweetness that melts in your mouth.
+                                    </p>
+                                    <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                                        data-bs-target="#orderModal">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Recipe 5 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="recipe-card">
+                                <img src="Images/recipe5.jpg" alt="Apple Pie" class="img-fluid">
+                                <div class="p-3">
+                                    <h5>Apple Pie</h5>
+                                    <p>Warm, cinnamon-spiced apple pie with a flaky crust. Perfect for fall gatherings or any time
+                                        of the year.</p>
+                                    <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                                        data-bs-target="#orderModal">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Recipe 6 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="recipe-card">
+                                <img src="Images/recipe6.jpg" alt="Carrot Cake" class="img-fluid">
+                                <div class="p-3">
+                                    <h5>Carrot Cake</h5>
+                                    <p>A spiced cake full of fresh carrots and a creamy frosting that makes every bite a heavenly
+                                        experience.</p>
+                                    <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                                        data-bs-target="#orderModal">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Recipe 7 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="recipe-card">
+                                <img src="Images/recipe7.jpg" alt="Chocolate Chip Cookies" class="img-fluid">
+                                <div class="p-3">
+                                    <h5>Chocolate Chip Cookies</h5>
+                                    <p>Golden, chewy cookies filled with gooey chocolate chips—an all-time favorite treat!</p>
+                                    <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                                        data-bs-target="#orderModal">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Recipe 8 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="recipe-card">
+                                <img src="Images/recipe8.jpg" alt="Banana Bread" class="img-fluid">
+                                <div class="p-3">
+                                    <h5>Banana Bread</h5>
+                                    <p>Soft banana bread made with overripe bananas and a touch of cinnamon, perfect for breakfast.
+                                    </p>
+                                    <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                                        data-bs-target="#orderModal">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Recipe 9 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="recipe-card">
+                                <img src="Images/recipe9.jpg" alt="Lemon Drizzle Cake">
+                                <div class="p-3">
+                                    <h5>Lemon Drizzle Cake</h5>
+                                    <p>A light, zesty cake with a tangy lemon drizzle that makes it the perfect refreshing dessert.
+                                    </p>
+                                    <button class="btn btn-pink order-now-btn" data-bs-toggle="modal"
+                                        data-bs-target="#orderModal">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+            <!-- Repeat this structure for other recipes as needed, making sure each card is consistent -->
+
+        </div>
+    </section>
+
+
+
+    <div class="text-center mt-4">
+        <a href="index.html" class="btn btn-pink">Back to Home</a>
+    </div>
+    </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Bakers Heaven. All Rights Reserved.</p>
+    </footer>
+    <!-- Order Modal -->
+    <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderModalLabel">Place Your Order</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="orderForm">
+                        <div class="mb-3">
+                            <label for="customerName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="customerName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="customerPhone" class="form-label">Phone Number</label>
+                            <input type="text" class="form-control" id="customerPhone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="customerCity" class="form-label">City</label>
+                            <select class="form-select" id="customerCity" required>
+                                <option value="">Select City</option>
+                                <option value="Karachi">Karachi</option>
+                                <option value="Lahore">Lahore</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="customerAddress" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="customerAddress" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="addressType" class="form-label">Home or Office</label>
+                            <select class="form-select" id="addressType" required>
+                                <option value="">Select</option>
+                                <option value="Home">Home</option>
+                                <option value="Office">Office</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="orderQuantity" class="form-label">Quantity</label>
+                            <input type="number" class="form-control" id="orderQuantity" min="1" value="1" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-pink" onclick="submitOrder()">Place Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thank You Modal -->
+    <div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="thankYouModalLabel">Thank You</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p>Thank you for your order! We will process it shortly. Your order will be delivered in 24 hours.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-pink" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        // Reset form fields every time modal is shown
+        $('#orderModal').on('show.bs.modal', function () {
+            // Reset the form
+            $('#orderForm')[0].reset();
+            // Clear any validation classes (if applied) and hide error messages
+            $('#orderForm input, #orderForm select').removeClass('is-invalid');
+            $('#orderForm .invalid-feedback').hide();
+        });
+
+        function submitOrder() {
+            let valid = true;
+
+            // Get values from form fields
+            const name = $('#customerName').val();
+            const phone = $('#customerPhone').val();
+            const city = $('#customerCity').val();
+            const address = $('#customerAddress').val();
+            const addressType = $('#addressType').val();
+            const quantity = $('#orderQuantity').val();
+
+            // Regular expression for phone number validation (allowing hyphens and spaces)
+            const phonePattern = /^[0-9\s-]{10,15}$/;
+
+            // Validate Name (only letters)
+            if (!name || !/^[a-zA-Z\s]+$/.test(name)) {
+                $('#customerName').addClass('is-invalid');
+                $('#customerName').next('.invalid-feedback').show();
+                valid = false;
+            } else {
+                $('#customerName').removeClass('is-invalid');
+                $('#customerName').next('.invalid-feedback').hide();
+            }
+
+            // Validate Phone Number
+            if (!phone || !phonePattern.test(phone)) {
+                $('#customerPhone').addClass('is-invalid');
+                $('#customerPhone').next('.invalid-feedback').show();
+                valid = false;
+            } else {
+                $('#customerPhone').removeClass('is-invalid');
+                $('#customerPhone').next('.invalid-feedback').hide();
+            }
+
+            // Validate other fields
+            if (!city || !address || !addressType || quantity < 1) {
+                valid = false;
+                alert('Please fill out all required fields correctly.');
+            }
+
+            // Submit the form if all validations pass
+            if (valid) {
+                const orderModal = bootstrap.Modal.getInstance(document.getElementById('orderModal'));
+                orderModal.hide();
+                const thankYouModal = new bootstrap.Modal(document.getElementById('thankYouModal'));
+                thankYouModal.show();
+            }
+        }
+
+        // Get all nav links
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        // Loop through all nav links and check if the link's href matches the current URL
+        navLinks.forEach(link => {
+            // If the current link href matches the current URL, add the 'active' class
+            if (window.location.href.indexOf(link.href) !== -1) {
+                link.classList.add('active');
+            }
+        });
+
+
+
+    </script>
+</body>
+
+</html>
